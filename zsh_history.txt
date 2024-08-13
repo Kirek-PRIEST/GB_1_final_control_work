@@ -1,0 +1,17 @@
+: 1723572174:0;cat > Pets
+: 1723572481:0;cat > pack\ animals
+: 1723573059:0;cat Pets pack\ animals > allAnomals
+: 1723573158:0;cat allAnomals
+: 1723573254:0;mv allAnomals HumanFriends
+: 1723573262:0;ll
+: 1723573493:0;md Animals
+: 1723573631:0;mv HumanFriends /home/max/Animals/
+: 1723573692:0;ll
+: 1723574385:0;wget https://dev.mysql.com/get/mysql-community-server_9.0.1-1ubuntu24.04_amd64.deb
+: 1723574414:0;cd Ѓ�агру�зки
+: 1723574416:0;ll
+: 1723574524:0;cd /
+: 1723574543:0;cd /home/max
+: 1723574545:0;ll
+: 1723574571:0;sudo dpkg -i mysql-community-server_9.0.1-1ubuntu24.04_amd64.deb
+: 1723574907:0;history -w history.txt
