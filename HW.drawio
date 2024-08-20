@@ -1,0 +1,31 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 YaBrowser/24.7.0.0 Safari/537.36" version="24.7.7">
+  <diagram name="Страница — 1" id="NYdr-Z-MtiCLB6OZN5Wi">
+    <mxGraphModel dx="1434" dy="767" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="HWjYasvVDLlLGQPsCMS9-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="HWjYasvVDLlLGQPsCMS9-1" target="HWjYasvVDLlLGQPsCMS9-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HWjYasvVDLlLGQPsCMS9-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="HWjYasvVDLlLGQPsCMS9-1" target="HWjYasvVDLlLGQPsCMS9-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HWjYasvVDLlLGQPsCMS9-1" value="Animals" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="354" y="30" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="HWjYasvVDLlLGQPsCMS9-2" value="Pets" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="150" y="120" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="HWjYasvVDLlLGQPsCMS9-4" value="Pack animals" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="570" y="120" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="HWjYasvVDLlLGQPsCMS9-33" value="ID&lt;div&gt;Name&lt;/div&gt;&lt;div&gt;Type&lt;/div&gt;&lt;div&gt;BD date&lt;/div&gt;&lt;div&gt;Commands&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="150" y="150" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Op_F13v01UTcL-3pmfVb-1" value="ID&lt;div&gt;Name&lt;/div&gt;&lt;div&gt;Type&lt;/div&gt;&lt;div&gt;BD date&lt;/div&gt;&lt;div&gt;Commands&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="570" y="150" width="120" height="70" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
