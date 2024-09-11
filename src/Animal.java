@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Animal {
 
 private int id;
@@ -5,14 +7,14 @@ private String name;
 private char sex;
 private  String type;
 private String birthdayDate;
-private String commands;
+private String[] commands;
 
-    public Animal(int id, String name, char sex, String type, String birthdayDate, String commands) {
+    public Animal(int id, String name, char sex, String type, String birthdayDate, String[] commands) {
         this.id = id;
         this.name = name;
         this.sex = sex;
         this.type = type;
-        this.birthdayDate = birthdayDate;
+        this.birthdayDate = birthdayDate; //переделвть дату из стринка в формат даты!!!
         this.commands = commands;
     }
 
@@ -36,7 +38,7 @@ private String commands;
         this.birthdayDate = birthdayDate;
     }
 
-    public void setCommands(String commands) {
+    public void setCommands(String[] commands) {
         this.commands = commands;
     }
 
@@ -60,7 +62,7 @@ private String commands;
         return birthdayDate;
     }
 
-    public String getCommands() {
+    public String[] getCommands() {
         return commands;
     }
 
@@ -72,7 +74,7 @@ private String commands;
                 "Пол = %s\n" +
                 "Вид = %s\n" +
                 "Дата рождения = %s\n" +
-                "Выполняемые команды = %s", id, name, sex, type, birthdayDate, commands) +
+                "Выполняемые команды = %s", id, name, sex, type, birthdayDate, Arrays.toString(commands)) +
                 "\n \n";
 
     }

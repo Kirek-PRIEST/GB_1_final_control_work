@@ -5,8 +5,8 @@ public class ListOfAnimals {
 
 private List<Animal> listOfAnimals = new LinkedList<>();
 
-    public void addType(Animal Animal){
-        listOfAnimals.add(Animal);
+    public void addAnimal(Animal animal){
+        listOfAnimals.add(animal);
     }
     public int getSize() {
         return listOfAnimals.size();

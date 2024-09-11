@@ -1,22 +1,26 @@
 public class TypeOfAnimal {
-    private int id;
+
+    private String typeOfAnimal;
     private String type;
 
-    public TypeOfAnimal(int id, String type) {
-        this.id = id;
+    public TypeOfAnimal(String typeOfAnimal, String type) {
+
+        this.typeOfAnimal = typeOfAnimal;
         this.type = type;
+
     }
 
-    public int getId() {
-        return id;
+    public String getTypeOfAnimal() {
+        return typeOfAnimal;
     }
 
     public String getType() {
         return type;
     }
 
-    public void setId(int id) {
-        this.id = id;
+
+    public void setTypeOfAnimal(String typeOfAnimal) {
+        this.typeOfAnimal = typeOfAnimal;
     }
 
     public void setType(String type) {
@@ -25,8 +29,7 @@ public class TypeOfAnimal {
 
     @Override
     public String toString() {
-        return "Вид животного:\n" +
-                "id = " + id + "\n" +
-                "Название вида = " + type ;
+        return  typeOfAnimal + "\t" +
+                type;
     }
 }
