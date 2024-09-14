@@ -1,5 +1,5 @@
 import animals.ListOfAnimals;
-import animals.animalsActions.AnimalsOperations;
+import animals.animalsActions.operations.AnimalsOperations;
 import animals.animalsActions.Menus;
 import types.ListOfTypes;
 
@@ -23,7 +23,9 @@ public class Starter {
                             "1 = добавить животное\n" +
                             "2 = изменить список команд животного\n" +
                             "3 = вывести список животных\n" +
-                            "4 - выйти из программы"
+                            "4 = сортировать список животных по дате рождения\n" +
+                            "5 = поиск животных по дате рождения\n" +
+                            "6 = выйти из программы"
 
                     ));
                     if (choice > 0 && choice <= map.size()) {

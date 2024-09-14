@@ -1,6 +1,6 @@
 package animals;
 
-import animals.animalsActions.AnimalsOperations;
+import animals.animalsActions.operations.AnimalsOperations;
 import types.ListOfTypes;
 
 public class EndProgram implements AnimalsOperations {

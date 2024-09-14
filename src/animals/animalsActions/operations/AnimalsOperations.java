@@ -1,4 +1,4 @@
-package animals.animalsActions;
+package animals.animalsActions.operations;
 
 import animals.ListOfAnimals;
 import types.ListOfTypes;

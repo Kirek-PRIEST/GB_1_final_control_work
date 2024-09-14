@@ -2,8 +2,7 @@ package animals.animalsActions;
 
 import animals.Animal;
 import animals.ListOfAnimals;
-import animals.animalsCommandsActions.AddCommand;
-import animals.animalsCommandsActions.ChangeCommands;
+import animals.utils.PrintAnimalsList;
 import types.ListOfTypes;
 
 import java.util.Scanner;
@@ -21,13 +20,16 @@ public class AnimalsController {
     }
 
     public void printAnimals(ListOfAnimals list) {
-        System.out.println("Список животных:\n" +
-                "id\tИмя\t\tпол\tдата рождения\tсписок команд\n ===");
-        for (int i = 0; i < list.getSize(); i++) {
-            System.out.println(list.getAnimal(i));
-        }
+        printList(list);
     }
-
+    public void sortAnimalsByDate(ListOfAnimals list){
+        SortAnimalsByDateSimple sort = new SortAnimalsByDateSimple();
+        sort.SortAnimals(list);
+    }
+    public void mergeAnimalsByDate(ListOfAnimals list){
+        MergeByDate merge = new MergeByDate();
+        printList(merge.merge(list));
+    }
 
     private static boolean isNumeric(String str) {
         try {
@@ -46,5 +48,9 @@ public class AnimalsController {
 
     private Animal printAnimal(ListOfAnimals list, int id) {
         return list.getAnimal(id - 1);
+    }
+    private void printList(ListOfAnimals list){
+        PrintAnimalsList print = new PrintAnimalsList();
+        print.print(list);
     }
 }

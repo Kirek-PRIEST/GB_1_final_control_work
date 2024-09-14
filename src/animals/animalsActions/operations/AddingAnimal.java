@@ -1,6 +1,8 @@
-package animals.animalsActions;
+package animals.animalsActions.operations;
 
 import animals.ListOfAnimals;
+import animals.animalsActions.AnimalsController;
+import animals.animalsActions.operations.AnimalsOperations;
 import types.ListOfTypes;
 
 public class AddingAnimal implements AnimalsOperations {
