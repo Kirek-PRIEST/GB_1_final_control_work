@@ -1,9 +1,21 @@
+package animals.animalsActions;
+
+import animals.Animal;
+import animals.ListOfAnimals;
+import types.ListOfTypes;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.Year;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
 import java.util.Scanner;
 
 public class AddAnimal {
 
-    public ListOfAnimals addingToy(ListOfAnimals list, ListOfTypes types) {
+    public ListOfAnimals addingAnimal(ListOfAnimals list, ListOfTypes types) {
         int id = list.getSize() + 1;
         Animal newAnimal = new Animal(id,
                 prompt("Введите имя животного: "),
@@ -12,6 +24,9 @@ public class AddAnimal {
                 birthday(),
                 commands()
         );
+        System.out.println("Вы добавили животное:\n" +
+                            newAnimal
+                );
         list.addAnimal(newAnimal);
         return list;
     }
@@ -22,7 +37,7 @@ public class AddAnimal {
         if (input.length() > 1) {
             System.out.println("Пол животного введён некорректно. Введите М, или Ж");
             sex();
-        } else if (input.charAt(0) != 'M' && input.charAt(0) != 'Ж') {
+        } else if (input.charAt(0) != 'М' && input.charAt(0) != 'Ж') {
             System.out.println("Пол животного введён некорректно. Введите М, или Ж");
             sex();
         }
@@ -30,19 +45,30 @@ public class AddAnimal {
     } // Ввод пола животного
 
     private String type(ListOfTypes types) {
-        String input = prompt("Выберете вид животного (цифра): ");
-        System.out.println("Список доступных видов:");
-        System.out.println(types);
-        int index = Integer.parseInt(input);
-        if (!isNumeric(input) || index < 1 || index > types.getSize()) {
-            System.out.println("Выбран неверный вид животного, повторите ввод");
+        int index = 0;
+        String typeOfAnimal = null;
+        try {
+            System.out.println("Список доступных видов:");
+            System.out.println(types);
+            String input = prompt("Выберете вид животного (цифра): ");
+            while (!isNumeric(input)) {
+                input = prompt("Введено некорректное значение.");
+            }
+            index = Integer.parseInt(input) - 1;
+            if (index < 0 || index > types.getSize()) {
+                type(types);
+            }else {
+            typeOfAnimal = types.getType(index);}
+
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("Выбран неверный вид животного, повторите ввод!");
             type(types);
         }
-        return types.getType(index);
+        return typeOfAnimal;
 
     } // Ввод вида животного
 
-    private String birthday() {
+    private Date birthday() {
         String year = prompt("Введите год рождения животного: ");
         while (!year(year)) {
             year = prompt("Введите год рождения животного: ");
@@ -55,11 +81,31 @@ public class AddAnimal {
         while (!day(year, month, day)) {
             day = prompt("Введите день рождения животного");
         }
+
         if (Integer.parseInt(month) < 10) {
-            return day + ":0" + month + ":" + year;
-        } else return day + ":" + month + ":" + year;
+            return stringToDate(day + "/0" + month + "/" + year);
+        } else return stringToDate(day + "/" + month + "/" + year);
 
     } // Ввод даты рождения животного
+    private ArrayList<String> commands() {
+
+        String input = prompt("Введите спсок команд через запятую: ");
+        ArrayList<String> newCommands = new ArrayList<>(Arrays.asList(input.split(",")));
+        for (int i = 0; i < newCommands.size() - 1; i++) {
+            newCommands.set(i, newCommands.get(i).startsWith(" ") ? newCommands.get(i).substring(1) : newCommands.get(i));
+        }
+        return newCommands;
+    } // Ввод коман, которые выполняет животное
+    private Date stringToDate(String s){
+        DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+        Date startDate;
+        try {
+            startDate = df.parse(s);
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+        return startDate;
+    }
 
     private boolean year(String year) {
         try {
@@ -128,19 +174,6 @@ public class AddAnimal {
     } // проверка правильности введённого дня
 
 
-    private String[] commands() {
-        String input = prompt("Введите спсок команд через запятую: ");
-        char[] c = input.toCharArray();
-        StringBuilder result = new StringBuilder();
-        result.append(c[0]);
-        for (int i = 1; i < c.length - 1; i++) {
-            if (c[i] != ' ' && c[i - 1] != ',') {
-                result.append(c[i]);
-            }
-        }
-        input = result.toString();
-        return input.split(",");
-    } // Баг, если нет пробела после запятой!!!
 
     private String prompt(String message) {
         Scanner scanner = new Scanner(System.in);

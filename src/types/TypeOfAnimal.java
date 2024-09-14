@@ -1,3 +1,5 @@
+package types;
+
 public class TypeOfAnimal {
 
     private String typeOfAnimal;

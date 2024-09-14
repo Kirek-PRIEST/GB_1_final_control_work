@@ -1,4 +1,9 @@
-import java.util.Arrays;
+package animals;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 
 public class Animal {
 
@@ -6,10 +11,10 @@ private int id;
 private String name;
 private char sex;
 private  String type;
-private String birthdayDate;
-private String[] commands;
+private Date birthdayDate;
+private ArrayList<String> commands;
 
-    public Animal(int id, String name, char sex, String type, String birthdayDate, String[] commands) {
+    public Animal(int id, String name, char sex, String type, Date birthdayDate, ArrayList<String> commands) {
         this.id = id;
         this.name = name;
         this.sex = sex;
@@ -34,11 +39,11 @@ private String[] commands;
         this.type = type;
     }
 
-    public void setBirthdayDate(String birthdayDate) {
+    public void setBirthdayDate(Date birthdayDate) {
         this.birthdayDate = birthdayDate;
     }
 
-    public void setCommands(String[] commands) {
+    public void setCommands(ArrayList<String> commands) {
         this.commands = commands;
     }
 
@@ -58,24 +63,27 @@ private String[] commands;
         return type;
     }
 
-    public String getBirthdayDate() {
+    public Date getBirthdayDate() {
         return birthdayDate;
     }
 
-    public String[] getCommands() {
+    public ArrayList<String> getCommands() {
         return commands;
     }
 
     @Override
     public String toString() {
         return String.format(
-                "ID = %s \n" +
-                "Имя = %s\n" +
-                "Пол = %s\n" +
-                "Вид = %s\n" +
-                "Дата рождения = %s\n" +
-                "Выполняемые команды = %s", id, name, sex, type, birthdayDate, Arrays.toString(commands)) +
-                "\n \n";
+                "%s \t" +
+                "%s\t" +
+                "%s\t" +
+                "%s\t" +
+                "%s\t" +
+                "%s", id, name, sex, type, birthdayToString(birthdayDate), commands);
 
+    }
+    private String birthdayToString(Date date){
+        DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+        return df.format(date);
     }
 }
