@@ -10,27 +10,30 @@ public class Starter {
     private boolean isExit = false;
     HashMap<Integer, AnimalsOperations> map = Menus.animalsCommands();
     ListOfTypes typesList = new ListOfTypes();
-    ListOfAnimals animalsList = new ListOfAnimals();
+    ListOfAnimals petsList = new ListOfAnimals();
+    ListOfAnimals packAnimalsList = new ListOfAnimals();
+
 
     public void run() {
         Start(typesList);
-
         try {
             while (true) {
                 while (!isExit) {
-                    System.out.println("Всего животных в реестре: " + animalsList.getSize());
+                    System.out.println(String.format("Всего животных в реестре: %s. (домашних  - %s, вьючых - %s)",
+                            (petsList.getSize() + packAnimalsList.getSize()), petsList.getSize(), packAnimalsList.getSize()
+
+                    ));
                     int choice = Integer.parseInt(prompt("Список доступных действий:\n" +
                             "1 = добавить животное\n" +
                             "2 = изменить список команд животного\n" +
-                            "3 = вывести список животных\n" +
-                            "4 = сортировать список животных по дате рождения\n" +
-                            "5 = поиск животных по дате рождения\n" +
-                            "6 = выйти из программы"
+                            "3 = печать списков\n" +
+                            "4 = выйти из программы\n" +
+                            "==>"
 
                     ));
                     if (choice > 0 && choice <= map.size()) {
                         AnimalsOperations operations = map.get(choice);
-                        operations.animalsOperations(animalsList, typesList);
+                        operations.animalsOperations(petsList, packAnimalsList, typesList);
                     } else {
                         System.out.println("Введена некорректная команда. Пожалуйста, повторите ввод.\n");
                         run();
@@ -53,13 +56,13 @@ public class Starter {
 
     /* код для ускорения начала работы с программой - создаёт список видов животныхЮ чтобы не создавать его вручную*/
     private ListOfTypes Start(ListOfTypes list) {
-        list.addType("Кошка", "Домашнее");
-        list.addType("Капибара", "Домашнее");
-        list.addType("Верблюд", "Вьючное");
-        list.addType("Собака", "Домашнее");
-        list.addType("Хомяк", "Домашнее");
-        list.addType("Лошадь", "Вьючное");
-        list.addType("Осёл", "Вьючное");
+        list.addType("Кошка", "домашнее");
+        list.addType("Капибара", "домашнее");
+        list.addType("Верблюд", "вьючное");
+        list.addType("Собака", "домашнее");
+        list.addType("Хомяк", "домашнее");
+        list.addType("Лошадь", "вьючное");
+        list.addType("Осёл", "вьючное");
         return list;
     }
 }

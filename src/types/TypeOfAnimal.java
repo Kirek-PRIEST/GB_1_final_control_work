@@ -2,8 +2,8 @@ package types;
 
 public class TypeOfAnimal {
 
-    private String typeOfAnimal;
-    private String type;
+    private String typeOfAnimal; //вид животного
+    private String type;// тип животного (домашнее/вьючное)
 
     public TypeOfAnimal(String typeOfAnimal, String type) {
 

@@ -1,4 +1,4 @@
-package animals.animalsCommandsActions;
+package animals.animalsCommandsActions.operations;
 
 import animals.Animal;
 import animals.ListOfAnimals;

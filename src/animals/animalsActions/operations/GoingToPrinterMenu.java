@@ -4,11 +4,10 @@ import animals.ListOfAnimals;
 import animals.animalsActions.AnimalsController;
 import types.ListOfTypes;
 
-public class MergingByDate implements AnimalsOperations{
+public class GoingToPrinterMenu implements AnimalsOperations{
     @Override
-    public ListOfAnimals animalsOperations(ListOfAnimals list, ListOfTypes typesList) {
+    public void animalsOperations(ListOfAnimals pets, ListOfAnimals packAnimals, ListOfTypes listOfTypes) {
         AnimalsController controller = new AnimalsController();
-        controller.mergeAnimalsByDate(list);
-        return null;
+        controller.toPrinterMenu(pets, packAnimals);
     }
 }

@@ -5,9 +5,8 @@ import types.ListOfTypes;
 
 public class EndProgram implements AnimalsOperations {
     @Override
-    public ListOfAnimals animalsOperations(ListOfAnimals list, ListOfTypes typesList) {
+    public void animalsOperations(ListOfAnimals pets, ListOfAnimals typesList, ListOfTypes listOfTypes) {
         System.out.println("Спасибо за использование программы");
         System.exit(0);
-        return null;
     }
 }

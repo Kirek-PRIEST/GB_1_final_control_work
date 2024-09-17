@@ -1,5 +1,7 @@
 package animals;
 
+import types.TypeOfAnimal;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -10,11 +12,11 @@ public class Animal {
 private int id;
 private String name;
 private char sex;
-private  String type;
+private  TypeOfAnimal type;
 private Date birthdayDate;
 private ArrayList<String> commands;
 
-    public Animal(int id, String name, char sex, String type, Date birthdayDate, ArrayList<String> commands) {
+    public Animal(int id, String name, char sex, TypeOfAnimal type, Date birthdayDate, ArrayList<String> commands) {
         this.id = id;
         this.name = name;
         this.sex = sex;
@@ -35,7 +37,7 @@ private ArrayList<String> commands;
         this.sex = sex;
     }
 
-    public void setType(String type) {
+    public void setType(TypeOfAnimal type) {
         this.type = type;
     }
 
@@ -59,7 +61,7 @@ private ArrayList<String> commands;
         return sex;
     }
 
-    public String getType() {
+    public TypeOfAnimal getType() {
         return type;
     }
 
@@ -82,7 +84,7 @@ private ArrayList<String> commands;
                 "%s", id, name, sex, type, birthdayToString(birthdayDate), commands);
 
     }
-    private String birthdayToString(Date date){
+    public String birthdayToString(Date date){
         DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
         return df.format(date);
     }

@@ -2,7 +2,9 @@ package animals.animalsActions;
 
 import animals.Animal;
 import animals.ListOfAnimals;
-import animals.utils.PrintAnimalsList;
+import printer.MergeByDate;
+import printer.SortAnimalsByDateSimple;
+import utils.PrintAnimalsList;
 import types.ListOfTypes;
 
 import java.util.Scanner;
@@ -10,26 +12,20 @@ import java.util.Scanner;
 public class AnimalsController {
 
 
-    public ListOfAnimals addAnimal(ListOfAnimals animalsList, ListOfTypes typesList) {
+    public void addAnimal(ListOfAnimals animalsList, ListOfAnimals packAnimals, ListOfTypes typesList) {
         AddAnimal adding = new AddAnimal();
-        return adding.addingAnimal(animalsList, typesList);
+        adding.addingAnimal(animalsList, packAnimals , typesList);
     }
     public void toCommandsMenu(ListOfAnimals animals){
         ToCommandsMenu toCommandsMenu = new ToCommandsMenu();
         toCommandsMenu.toCommandsMenu(animals);
     }
+    public void toPrinterMenu(ListOfAnimals pets, ListOfAnimals packAnimals){
+        ToPrinterMenu toPrinterMenu = new ToPrinterMenu();
+        toPrinterMenu.toPrinterMenu(pets, packAnimals);
+    }
 
-    public void printAnimals(ListOfAnimals list) {
-        printList(list);
-    }
-    public void sortAnimalsByDate(ListOfAnimals list){
-        SortAnimalsByDateSimple sort = new SortAnimalsByDateSimple();
-        sort.SortAnimals(list);
-    }
-    public void mergeAnimalsByDate(ListOfAnimals list){
-        MergeByDate merge = new MergeByDate();
-        printList(merge.merge(list));
-    }
+
 
     private static boolean isNumeric(String str) {
         try {
@@ -49,8 +45,5 @@ public class AnimalsController {
     private Animal printAnimal(ListOfAnimals list, int id) {
         return list.getAnimal(id - 1);
     }
-    private void printList(ListOfAnimals list){
-        PrintAnimalsList print = new PrintAnimalsList();
-        print.print(list);
-    }
+
 }

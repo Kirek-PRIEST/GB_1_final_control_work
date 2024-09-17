@@ -24,8 +24,8 @@ public class CommandsController {
         }
         int id = Integer.parseInt(input);
         System.out.println("Вы выбрали животное:\t" +
-                printAnimal(animals, id));
-        return animals.getAnimal(id);
+                printAnimal(animals, id-1));
+        return animals.getAnimal(id-1);
     }
     private String prompt(String message) {
         Scanner scanner = new Scanner(System.in);
@@ -33,7 +33,7 @@ public class CommandsController {
         return scanner.nextLine();
     }
     private Animal printAnimal(ListOfAnimals list, int id) {
-        return list.getAnimal(id - 1);
+        return list.getAnimal(id );
     }
     private static boolean isNumeric(String str) {
         try {

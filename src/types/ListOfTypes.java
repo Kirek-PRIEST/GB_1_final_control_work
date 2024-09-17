@@ -19,8 +19,8 @@ public class ListOfTypes {
     public ArrayList<TypeOfAnimal> getList(){
         return typeOfAnimals;
     }
-    public  String getType(int a){
-        return typeOfAnimals.get(a).getTypeOfAnimal();
+    public  TypeOfAnimal getType(int a){
+        return typeOfAnimals.get(a);
     }
     @Override
 

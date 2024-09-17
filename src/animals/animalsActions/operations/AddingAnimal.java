@@ -2,15 +2,14 @@ package animals.animalsActions.operations;
 
 import animals.ListOfAnimals;
 import animals.animalsActions.AnimalsController;
-import animals.animalsActions.operations.AnimalsOperations;
 import types.ListOfTypes;
 
 public class AddingAnimal implements AnimalsOperations {
 
 
     @Override
-    public ListOfAnimals animalsOperations(ListOfAnimals list, ListOfTypes typesList) {
+    public void animalsOperations(ListOfAnimals pets, ListOfAnimals packAnimals, ListOfTypes listOfTypes) {
         AnimalsController controller = new AnimalsController();
-        return controller.addAnimal(list, typesList);
+        controller.addAnimal(pets, packAnimals, listOfTypes);
     }
 }

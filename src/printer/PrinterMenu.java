@@ -1,39 +1,40 @@
-package animals.animalsCommandsActions;
+package printer;
 
 import animals.ListOfAnimals;
 import animals.animalsActions.Menus;
-import animals.animalsCommandsActions.operations.CommandsOperations;
+import printer.operations.PrinterOperations;
 
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class CommandsMenu {
+public class PrinterMenu {
     private boolean isExit = false;
-    HashMap<Integer, CommandsOperations> map = Menus.commandsCommands();
+    HashMap<Integer, PrinterOperations> map = Menus.printerCommands();
 
-    public void menu(ListOfAnimals animalsList) {
+    public void menu(ListOfAnimals pets, ListOfAnimals packAnimals) {
         try {
             while (true) {
                 while (!isExit) {
                     int choice = Integer.parseInt(prompt("Список доступных действий:\n" +
-                            "1 = добавить команду\n" +
-                            "2 = изменить команду\n" +
-                            "3 = в предыдущее меню"
+                                    "1 = вывести список животных\n" +
+                                    "2 = сортировать список животных по дате рождения\n" +
+                                    "3 = поиск животных по дате рождения\n" +
+                                    "4 = в предыдущее меню"
                     ));
                     if (choice == 4){
                         return;
                     }else if (choice > 0 && choice <= map.size()) {
-                        CommandsOperations operations = map.get(choice);
-                        operations.changing(animalsList);
+                        PrinterOperations operations = map.get(choice);
+                        operations.printing(pets, packAnimals);
                     } else {
                         System.out.println("Введена некорректная команда. Пожалуйста, повторите ввод.\n");
-                        menu(animalsList);
+                        menu(pets, packAnimals);
                     }
                 }
             }
         } catch (NumberFormatException e) {
             System.out.println("Введена некорректная команда. Пожалуйста, повторите ввод.\n");
-            menu(animalsList);
+            menu(pets,packAnimals);
         }
 
     }
