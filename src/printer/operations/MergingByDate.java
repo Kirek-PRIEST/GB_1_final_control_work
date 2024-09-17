@@ -1,10 +1,7 @@
 package printer.operations;
 
 import animals.ListOfAnimals;
-import animals.animalsActions.AnimalsController;
-import animals.animalsActions.operations.AnimalsOperations;
 import printer.PrinterController;
-import types.ListOfTypes;
 
 public class MergingByDate implements PrinterOperations {
 

@@ -1,11 +1,9 @@
 package animals.animalsCommandsActions;
 
 import animals.Animal;
-import animals.ListOfAnimals;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 public class ChangeCommands {

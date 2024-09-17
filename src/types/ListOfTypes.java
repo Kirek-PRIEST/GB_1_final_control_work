@@ -6,8 +6,6 @@ import java.util.ArrayList;
 public class ListOfTypes {
     private ArrayList<TypeOfAnimal> typeOfAnimals = new ArrayList<>();
 
-    /* Продумать работу листа видов животных!!!!! */
-
 
     public void addType(String typeOfAnimal, String type){
             TypeOfAnimal adding = new TypeOfAnimal(typeOfAnimal, type);

@@ -1,6 +1,6 @@
 package utils;
 
-import animals.Animal;
+
 import animals.ListOfAnimals;
 
 public class PrintAnimalsList {

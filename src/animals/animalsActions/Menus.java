@@ -1,6 +1,6 @@
 package animals.animalsActions;
 
-import animals.EndProgram;
+import animals.animalsActions.operations.EndProgram;
 import animals.animalsActions.operations.*;
 import animals.animalsCommandsActions.operations.AddingCommands;
 import animals.animalsCommandsActions.operations.CgangingCommands;

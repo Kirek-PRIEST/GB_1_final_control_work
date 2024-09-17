@@ -2,9 +2,6 @@ package animals.animalsActions;
 
 import animals.Animal;
 import animals.ListOfAnimals;
-import printer.MergeByDate;
-import printer.SortAnimalsByDateSimple;
-import utils.PrintAnimalsList;
 import types.ListOfTypes;
 
 import java.util.Scanner;
@@ -24,26 +21,4 @@ public class AnimalsController {
         ToPrinterMenu toPrinterMenu = new ToPrinterMenu();
         toPrinterMenu.toPrinterMenu(pets, packAnimals);
     }
-
-
-
-    private static boolean isNumeric(String str) {
-        try {
-            Double.parseDouble(str);
-            return true;
-        } catch (NumberFormatException e) {
-            return false;
-        }
-    }
-
-    private String prompt(String message) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println(message);
-        return scanner.nextLine();
-    }
-
-    private Animal printAnimal(ListOfAnimals list, int id) {
-        return list.getAnimal(id - 1);
-    }
-
 }
