@@ -17,7 +17,7 @@ public class Starter {
     public void run() {
         Start(typesList);
         try {
-            while (true) {
+
                 while (!isExit) {
                     System.out.println(String.format("Всего животных в реестре: %s. (домашних  - %s, вьючых - %s)",
                             (petsList.getSize() + packAnimalsList.getSize()), petsList.getSize(), packAnimalsList.getSize()
@@ -38,7 +38,7 @@ public class Starter {
                         System.out.println("Введена некорректная команда. Пожалуйста, повторите ввод.\n");
                         run();
                     }
-                }
+
             }
         } catch (NumberFormatException e) {
             System.out.println("Введена некорректная команда. Пожалуйста, повторите ввод.\n");
